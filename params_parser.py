@@ -192,10 +192,10 @@ def init_attributes(dest=None):
         txtdump.write('Enable Turbo Nozzle\t\t=  True;\n')
         txtdump.write('Fludd Water Color\t\t=  [ 0x3C, 0x46, 0x78, 0x14 ];\n')
         txtdump.write('Fludd Cleaning Type\t\t=  1;\t\t\t\t# 0 = None, 1 = Clean, 2 = Goop\n')
-        txtdump.write('Spray Nozzle Joint Index\t=  15;\t\t\t\t# The joint index, 15 is the chest joint\n')
-        txtdump.write('Rocket Nozzle Joint Index\t=  15;\t\t\t\t# The joint index, 15 is the chest joint\n')
-        txtdump.write('Hover Nozzle Joint Index\t=  15;\t\t\t\t# The joint index, 15 is the chest joint\n')
-        txtdump.write('Turbo Nozzle Joint Index\t=  15;\t\t\t\t# The joint index, 15 is the chest joint\n')
+        txtdump.write('Spray Nozzle Joint Index\t=  14;\t\t\t\t# The joint index, 14 is the chest joint\n')
+        txtdump.write('Rocket Nozzle Joint Index\t=  14;\t\t\t\t# The joint index, 14 is the chest joint\n')
+        txtdump.write('Hover Nozzle Joint Index\t=  14;\t\t\t\t# The joint index, 14 is the chest joint\n')
+        txtdump.write('Turbo Nozzle Joint Index\t=  14;\t\t\t\t# The joint index, 14 is the chest joint\n')
         txtdump.write('Can Fludd Clean Seals\t\t=  False;\t\t\t# Yoshi seals\n')
 
         txtdump.write('\n#--Misc--#\n\n')
@@ -389,17 +389,17 @@ def get_attributes(file, dest=None, considerfolder=False):
         paramFile.rawdata.seek(0x8)
 
         txtdump.write('Start Health\t\t\t=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
-                                                                        byteorder='big',
-                                                                        signed=False)))
+                                                                         byteorder='big',
+                                                                         signed=False)))
         txtdump.write('Max Health\t\t\t=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
-                                                                        byteorder='big',
-                                                                        signed=False)))
+                                                                       byteorder='big',
+                                                                       signed=False)))
         txtdump.write('OOB Timer Step\t\t\t=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
-                                                                        byteorder='big',
-                                                                        signed=False)))
+                                                                           byteorder='big',
+                                                                           signed=False)))
         txtdump.write('OOB Max Timer\t\t\t=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
-                                                                        byteorder='big',
-                                                                        signed=False)))
+                                                                          byteorder='big',
+                                                                          signed=False)))
 
         txtdump.write('\n#--Multipliers--#\n\n')
 
@@ -438,18 +438,18 @@ def get_attributes(file, dest=None, considerfolder=False):
         txtdump.write('Fludd Cleaning Type\t\t=  {};\t\t\t\t# 0 = None, 1 = Clean, 2 = Goop\n'.format(int.from_bytes(paramFile.rawdata.read(4),
                                                                                                     byteorder='big',
                                                                                                     signed=False)))
-        txtdump.write('Spray Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 15 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
+        txtdump.write('Spray Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
                                                                                                                                byteorder='big',
                                                                                                                                signed=False)))
-        txtdump.write('Rocket Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 15 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
+        txtdump.write('Rocket Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
                                                                                                                                byteorder='big',
                                                                                                                                signed=False)))
         paramFile.rawdata.seek(1, 1)
         
-        txtdump.write('Hover Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 15 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
+        txtdump.write('Hover Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
                                                                                                                                byteorder='big',
                                                                                                                                signed=False)))
-        txtdump.write('Turbo Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 15 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
+        txtdump.write('Turbo Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
                                                                                                                                byteorder='big',
                                                                                                                                signed=False)))
         paramFile.rawdata.seek(3, 1)
