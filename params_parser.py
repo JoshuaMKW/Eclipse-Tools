@@ -151,11 +151,11 @@ def init_attributes(dest=None):
         os.makedirs(os.path.dirname(dest))
 
     activelist = ['#--Accessibles--#\n\n',
-                  'Can Use Fludd\t\t\t=  True;\n',
-                  'Can Ride Yoshi\t\t\t=  True;\n',
-                  'Has Scuba Helmet\t\t=  False;\n',
-                  'Has Sunglasses\t\t\t=  False;\n',
-                  'Has Shine Shirt\t\t\t=  False;\n']
+                  'Can Use Fludd'.ljust(32, ' ') + '=  True;\n',
+                  'Can Ride Yoshi'.ljust(32, ' ') + '=  True;\n',
+                  'Has Scuba Helmet'.ljust(32, ' ') + '=  False;\n',
+                  'Has Sunglasses'.ljust(32, ' ') + '=  False;\n',
+                  'Has Shine Shirt'.ljust(32, ' ') + '=  False;\n']
 
     with open(dest, 'w+') as txtdump:
         txtdump.write(wrap_text('PARAMS', True) + '\n\n')
@@ -165,42 +165,42 @@ def init_attributes(dest=None):
 
         txtdump.write('\n#--Basic-Settings--#\n\n')
 
-        txtdump.write('Max Jumps\t\t\t=  1;\n')
-        txtdump.write('Start Health\t\t\t=  8;\n')
-        txtdump.write('Max Health\t\t\t=  8;\n')
-        txtdump.write('OOB Timer Step\t\t\t=  4;\n')
-        txtdump.write('OOB Max Timer\t\t\t=  480;\n')
+        txtdump.write('Max Jumps'.ljust(32, ' ') + '=  1;\n')
+        txtdump.write('Start Health'.ljust(32, ' ') + '=  8;\n')
+        txtdump.write('Max Health'.ljust(32, ' ') + '=  8;\n')
+        txtdump.write('OOB Timer Step'.ljust(32, ' ') + '=  4;\n')
+        txtdump.write('OOB Max Timer'.ljust(32, ' ') + '=  480;\n')
 
         txtdump.write('\n#--Multipliers--#\n\n')
 
-        txtdump.write('Size XYZ Multiplier\t\t=  ( 1.0, 1.0, 1.0 );\n')
-        txtdump.write('Gravity Multiplier\t\t=  1.0;\n')
-        txtdump.write('NPC Bounce 1 Multiplier\t\t=  1.0;\n')
-        txtdump.write('NPC Bounce 2 Multiplier\t\t=  1.0;\n')
-        txtdump.write('NPC Bounce 3 Multiplier\t\t=  1.0;\n')
-        txtdump.write('Max Fall No Damage Multi\t=  1.0;\n')
-        txtdump.write('Base Jump Height Multiplier\t=  1.0;\n')
-        txtdump.write('Extra Jump Height Multiplier\t=  0.875;\t\t\t# baseJumpHeight * (multiplier^curJump)\n')
-        txtdump.write('Extra Jump F-Speed Multiplier\t=  1.0;\n')
-        txtdump.write('Forward Speed Multiplier\t=  1.0;\n')
+        txtdump.write('Size XYZ Multiplier'.ljust(32, ' ') + '=  ( 1.0, 1.0, 1.0 );\n')
+        txtdump.write('Gravity Multiplier'.ljust(32, ' ') + '=  1.0;\n')
+        txtdump.write('NPC Bounce 1 Multiplier'.ljust(32, ' ') + '=  1.0;\n')
+        txtdump.write('NPC Bounce 2 Multiplier'.ljust(32, ' ') + '=  1.0;\n')
+        txtdump.write('NPC Bounce 3 Multiplier'.ljust(32, ' ') + '=  1.0;\n')
+        txtdump.write('Max Fall No Damage Multi'.ljust(32, ' ') + '=  1.0;\n')
+        txtdump.write('Base Jump Height Multiplier'.ljust(32, ' ') + '=  1.0;\n')
+        txtdump.write('Extra Jump Height Multiplier'.ljust(32, ' ') + '=  0.875;'.ljust(32, ' ') + '# baseJumpHeight * (multiplier^curJump)\n')
+        txtdump.write('Extra Jump F-Speed Multiplier'.ljust(32, ' ') + '=  1.0;\n')
+        txtdump.write('Forward Speed Multiplier'.ljust(32, ' ') + '=  1.0;\n')
 
         txtdump.write('\n#--Fludd-Settings--#\n\n')
 
-        txtdump.write('Enable Spray Nozzle\t\t=  True;\n')
-        txtdump.write('Enable Rocket Nozzle\t\t=  True;\n')
-        txtdump.write('Enable Hover Nozzle\t\t=  True;\n')
-        txtdump.write('Enable Turbo Nozzle\t\t=  True;\n')
-        txtdump.write('Fludd Water Color\t\t=  [ 0x3C, 0x46, 0x78, 0x14 ];\n')
-        txtdump.write('Fludd Cleaning Type\t\t=  1;\t\t\t\t# 0 = None, 1 = Clean, 2 = Goop\n')
-        txtdump.write('Spray Nozzle Joint Index\t=  14;\t\t\t\t# The joint index, 14 is the chest joint\n')
-        txtdump.write('Rocket Nozzle Joint Index\t=  14;\t\t\t\t# The joint index, 14 is the chest joint\n')
-        txtdump.write('Hover Nozzle Joint Index\t=  14;\t\t\t\t# The joint index, 14 is the chest joint\n')
-        txtdump.write('Turbo Nozzle Joint Index\t=  14;\t\t\t\t# The joint index, 14 is the chest joint\n')
-        txtdump.write('Can Fludd Clean Seals\t\t=  False;\t\t\t# Yoshi seals\n')
+        txtdump.write('Enable Spray Nozzle'.ljust(32, ' ') + '=  True;\n')
+        txtdump.write('Enable Rocket Nozzle'.ljust(32, ' ') + '=  True;\n')
+        txtdump.write('Enable Hover Nozzle'.ljust(32, ' ') + '=  True;\n')
+        txtdump.write('Enable Turbo Nozzle'.ljust(32, ' ') + '=  True;\n')
+        txtdump.write('Fludd Water Color'.ljust(32, ' ') + '=  [ 0x3C, 0x46, 0x78, 0x14 ];\n')
+        txtdump.write('Fludd Cleaning Type'.ljust(32, ' ') + '=  1;'.ljust(32, ' ') + '# 0 = None, 1 = Clean, 2 = Goop\n')
+        txtdump.write('Spray Nozzle Joint Index'.ljust(32, ' ') + '=  14;'.ljust(32, ' ') + '# The joint index, 14 is the chest joint\n')
+        txtdump.write('Rocket Nozzle Joint Index'.ljust(32, ' ') + '=  14;'.ljust(32, ' ') + '# The joint index, 14 is the chest joint\n')
+        txtdump.write('Hover Nozzle Joint Index'.ljust(32, ' ') + '=  14;'.ljust(32, ' ') + '# The joint index, 14 is the chest joint\n')
+        txtdump.write('Turbo Nozzle Joint Index'.ljust(32, ' ') + '=  14;'.ljust(32, ' ') + '# The joint index, 14 is the chest joint\n')
+        txtdump.write('Can Fludd Clean Seals'.ljust(32, ' ') + '=  False;'.ljust(32, ' ') + '# Yoshi seals\n')
 
         txtdump.write('\n#--Misc--#\n\n')
 
-        txtdump.write('Name Key\t\t\t=  "Put a name in these quotes!";')
+        txtdump.write('Name Key'.ljust(32, ' ') + '=  "Put a name in these quotes!";')
         
 def set_attributes(file, dest=None, considerfolder=False):
     if dest is None:
@@ -363,11 +363,11 @@ def get_attributes(file, dest=None, considerfolder=False):
         os.makedirs(os.path.dirname(dest))
 
     activelist = ['#--Accessibles--#\n\n',
-                  'Can Use Fludd\t\t\t=  ',
-                  'Can Ride Yoshi\t\t\t=  ',
-                  'Has Scuba Helmet\t\t=  ',
-                  'Has Sunglasses\t\t\t=  ',
-                  'Has Shine Shirt\t\t\t=  ']
+                  'Can Use Fludd'.ljust(32, ' ') + '=  ',
+                  'Can Ride Yoshi'.ljust(32, ' ') + '=  ',
+                  'Has Scuba Helmet'.ljust(32, ' ') + '=  ',
+                  'Has Sunglasses'.ljust(32, ' ') + '=  ',
+                  'Has Shine Shirt'.ljust(32, ' ') + '=  ']
     
     with(open(file, 'rb')) as params_file:
         paramFile = ParamsFile(params_file)
@@ -382,79 +382,79 @@ def get_attributes(file, dest=None, considerfolder=False):
 
         txtdump.write('\n#--Basic-Settings--#\n\n')
 
-        txtdump.write('Max Jumps\t\t\t=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(1),
+        txtdump.write('Max Jumps'.ljust(32, ' ') + '=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(1),
                                                                         byteorder='big',
                                                                         signed=False)))
 
         paramFile.rawdata.seek(0x8)
 
-        txtdump.write('Start Health\t\t\t=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
+        txtdump.write('Start Health'.ljust(32, ' ') + '=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
                                                                          byteorder='big',
                                                                          signed=False)))
-        txtdump.write('Max Health\t\t\t=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
+        txtdump.write('Max Health'.ljust(32, ' ') + '=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
                                                                        byteorder='big',
                                                                        signed=False)))
-        txtdump.write('OOB Timer Step\t\t\t=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
+        txtdump.write('OOB Timer Step'.ljust(32, ' ') + '=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
                                                                            byteorder='big',
                                                                            signed=False)))
-        txtdump.write('OOB Max Timer\t\t\t=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
+        txtdump.write('OOB Max Timer'.ljust(32, ' ') + '=  {};\n'.format(int.from_bytes(paramFile.rawdata.read(2),
                                                                           byteorder='big',
                                                                           signed=False)))
 
         txtdump.write('\n#--Multipliers--#\n\n')
 
         sizeMultiplier = struct.unpack('>fff', paramFile.rawdata.read(12))
-        txtdump.write('Size XYZ Multiplier\t\t=  ( {}, {}, {} );\n'.format(sizeMultiplier[0],
+        txtdump.write('Size XYZ Multiplier'.ljust(32, ' ') + '=  ( {}, {}, {} );\n'.format(sizeMultiplier[0],
                                                                            sizeMultiplier[1],
                                                                            sizeMultiplier[2]))
 
-        txtdump.write('Gravity Multiplier\t\t=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
-        txtdump.write('NPC Bounce 1 Multiplier\t\t=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
-        txtdump.write('NPC Bounce 2 Multiplier\t\t=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
-        txtdump.write('NPC Bounce 3 Multiplier\t\t=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
-        txtdump.write('Max Fall No Damage Multi\t=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
-        txtdump.write('Base Jump Height Multiplier\t=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
-        txtdump.write('Extra Jump Height Multiplier\t=  {};\t\t\t#baseJumpHeight * (multiplier^curJump)\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
-        txtdump.write('Extra Jump F-Speed Multiplier\t=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
-        txtdump.write('Forward Speed Multiplier\t=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
+        txtdump.write('Gravity Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
+        txtdump.write('NPC Bounce 1 Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
+        txtdump.write('NPC Bounce 2 Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
+        txtdump.write('NPC Bounce 3 Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
+        txtdump.write('Max Fall No Damage Multi'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
+        txtdump.write('Base Jump Height Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
+        txtdump.write('Extra Jump Height Multiplier'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '#baseJumpHeight * (multiplier^curJump)\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
+        txtdump.write('Extra Jump F-Speed Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
+        txtdump.write('Forward Speed Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
         
         txtdump.write('\n#--Fludd-Settings--#\n\n')
 
-        txtdump.write('Enable Spray Nozzle\t\t=  {};\n'.format(byte2bool(paramFile.rawdata.read(1))))
-        txtdump.write('Enable Rocket Nozzle\t\t=  {};\n'.format(byte2bool(paramFile.rawdata.read(1))))
+        txtdump.write('Enable Spray Nozzle'.ljust(32, ' ') + '=  {};\n'.format(byte2bool(paramFile.rawdata.read(1))))
+        txtdump.write('Enable Rocket Nozzle'.ljust(32, ' ') + '=  {};\n'.format(byte2bool(paramFile.rawdata.read(1))))
 
         paramFile.rawdata.seek(1, 1)
 
-        txtdump.write('Enable Hover Nozzle\t\t=  {};\n'.format(byte2bool(paramFile.rawdata.read(1))))
-        txtdump.write('Enable Turbo Nozzle\t\t=  {};\n'.format(byte2bool(paramFile.rawdata.read(1))))
+        txtdump.write('Enable Hover Nozzle'.ljust(32, ' ') + '=  {};\n'.format(byte2bool(paramFile.rawdata.read(1))))
+        txtdump.write('Enable Turbo Nozzle'.ljust(32, ' ') + '=  {};\n'.format(byte2bool(paramFile.rawdata.read(1))))
 
         paramFile.rawdata.seek(3, 1)
         
-        txtdump.write('Fludd Water Color\t\t=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(paramFile.rawdata.read(1).hex().upper(),
+        txtdump.write('Fludd Water Color'.ljust(32, ' ') + '=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(paramFile.rawdata.read(1).hex().upper(),
                                                                                      paramFile.rawdata.read(1).hex().upper(),
                                                                                      paramFile.rawdata.read(1).hex().upper(),
                                                                                      paramFile.rawdata.read(1).hex().upper()))
 
-        txtdump.write('Fludd Cleaning Type\t\t=  {};\t\t\t\t# 0 = None, 1 = Clean, 2 = Goop\n'.format(int.from_bytes(paramFile.rawdata.read(4),
+        txtdump.write('Fludd Cleaning Type'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# 0 = None, 1 = Clean, 2 = Goop\n'.format(int.from_bytes(paramFile.rawdata.read(4),
                                                                                                     byteorder='big',
                                                                                                     signed=False)))
-        txtdump.write('Spray Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
+        txtdump.write('Spray Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
                                                                                                                                byteorder='big',
                                                                                                                                signed=False)))
-        txtdump.write('Rocket Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
+        txtdump.write('Rocket Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
                                                                                                                                byteorder='big',
                                                                                                                                signed=False)))
         paramFile.rawdata.seek(1, 1)
         
-        txtdump.write('Hover Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
+        txtdump.write('Hover Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
                                                                                                                                byteorder='big',
                                                                                                                                signed=False)))
-        txtdump.write('Turbo Nozzle Joint Index\t=  {};\t\t\t\t# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
+        txtdump.write('Turbo Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
                                                                                                                                byteorder='big',
                                                                                                                                signed=False)))
         paramFile.rawdata.seek(3, 1)
         
-        txtdump.write('Can Fludd Clean Seals\t\t=  {};\t\t\t# Yoshi seals\n'.format(byte2bool(paramFile.rawdata.read(1))))
+        txtdump.write('Can Fludd Clean Seals'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# Yoshi seals\n'.format(byte2bool(paramFile.rawdata.read(1))))
         
         txtdump.write('\n#--Misc--#\n\n')
         
@@ -467,7 +467,7 @@ def get_attributes(file, dest=None, considerfolder=False):
             namekey += char.decode('utf-8')
             char = paramFile.rawdata.read(1)
 
-        txtdump.write('Name Key\t\t\t=  "{}";\n'.format(namekey))
+        txtdump.write('Name Key'.ljust(32, ' ') + '=  "{}";\n'.format(namekey))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(prog='params.bin parser for SMS modding using the SME engine',

@@ -162,86 +162,86 @@ def init_attributes(dump=None):
     if not os.path.exists(os.path.dirname(dump)) and os.path.dirname(dump) not in ('', '/'):
         os.makedirs(os.path.dirname(dump))
 
-    activelist = ['Modify Light\t\t=  False;\n',
-                  'Modify Mario\t\t=  False;\n',
-                  'Modify Yoshi\t\t=  False;\n',
-                  'Modify Music\t\t=  False;\n',
-                  'Modify Fludd\t\t=  False;\n']
+    activelist = ['Modify Light'.ljust(32, ' ') + '=  False;\n',
+                  'Modify Mario'.ljust(32, ' ') + '=  False;\n',
+                  'Modify Yoshi'.ljust(32, ' ') + '=  False;\n',
+                  'Modify Music'.ljust(32, ' ') + '=  False;\n',
+                  'Modify Fludd'.ljust(32, ' ') + '=  False;\n']
 
     with open(dump, 'w+') as txtdump:
         txtdump.write(wrap_text('SME FILE', True) + '\n\n')
-        txtdump.write('Initialize Address\t=  0x00000000;\t#(0 = Load into internal heap)\n\n')
-        txtdump.write('Is Extra Stage\t\t=  False;\n')
-        txtdump.write('Is Diving Stage\t\t=  False;\n')
-        txtdump.write('Is Option Stage\t\t=  False;\n')
-        txtdump.write('Is Multiplayer Stage\t=  False;\n\n')
+        txtdump.write('Initialize Address'.ljust(32, ' ') + '=  0x00000000;'.ljust(32, ' ') + '#(0 = Load into internal heap)\n\n')
+        txtdump.write('Is Extra Stage'.ljust(32, ' ') + '=  False;\n')
+        txtdump.write('Is Diving Stage'.ljust(32, ' ') + '=  False;\n')
+        txtdump.write('Is Option Stage'.ljust(32, ' ') + '=  False;\n')
+        txtdump.write('Is Multiplayer Stage'.ljust(32, ' ') + '=  False;\n\n')
         for flag in activelist:
             txtdump.write(flag)
 
         txtdump.write('\n#--LIGHT--#\n')
-        txtdump.write('Light State\t\t=  0x01;\t#(0 = None, 1 = StaticPos, 2 = Follow Mario)\n')
-        txtdump.write('XYZ Coordinates\t\t=  ( 0.0, 3600.0, -7458.0 );\n')
-        txtdump.write('Light Size\t\t=  8000.0;\n')
-        txtdump.write('Layer Step\t\t=  100.0;\n')
-        txtdump.write('Light RGBA\t\t=  [ 0x00, 0x14, 0x28, 0x00 ];\n')
-        txtdump.write('Layers\t\t\t=  0x05;\n')
-        txtdump.write('Lightness\t\t=  0xFF;\t#(if 0xFF (255), it is auto calculated in game)\n')
+        txtdump.write('Light State'.ljust(32, ' ') + '=  0x01;'.ljust(32, ' ') + '#(0 = None, 1 = StaticPos, 2 = Follow Mario)\n')
+        txtdump.write('XYZ Coordinates'.ljust(32, ' ') + '=  ( 0.0, 3600.0, -7458.0 );\n')
+        txtdump.write('Light Size'.ljust(32, ' ') + '=  8000.0;\n')
+        txtdump.write('Layer Step'.ljust(32, ' ') + '=  100.0;\n')
+        txtdump.write('Light RGBA'.ljust(32, ' ') + '=  [ 0x00, 0x14, 0x28, 0x00 ];\n')
+        txtdump.write('Layers'.ljust(32, ' ') + '=  0x05;\n')
+        txtdump.write('Lightness'.ljust(32, ' ') + '=  0xFF;'.ljust(32, ' ') + '#(if 0xFF (255), it is auto calculated in game)\n')
 
         #MARIO
         txtdump.write('\n#--MARIO--#\n')
-        txtdump.write('Has Fludd\t\t=  True;\n')
-        txtdump.write('Has Helmet\t\t=  False;\n')
-        txtdump.write('Has Shades\t\t=  False;\n')
-        txtdump.write('Has Shirt\t\t=  False;\n')
-        txtdump.write('Speed Multiplier\t=  0.9765625;\n')
-        txtdump.write('Gravity Multiplier\t=  1.0;\n')
-        txtdump.write('NPC Bounce 1\t\t=  35.0;\n')
-        txtdump.write('NPC Bounce 2\t\t=  45.0;\n')
-        txtdump.write('NPC Bounce 3\t\t=  70.0;\n')
-        txtdump.write('Max No Damage Fall\t=  2048.0;\n')
-        txtdump.write('Health\t\t\t=  0x08;\n')
-        txtdump.write('Max Health\t\t=  0x08;\n')
-        txtdump.write('OOB Timer Step\t\t=  0x0004;\n')
-        txtdump.write('OOB Max Timer\t\t=  0x01E0;\n')
+        txtdump.write('Has Fludd'.ljust(32, ' ') + '=  True;\n')
+        txtdump.write('Has Helmet'.ljust(32, ' ') + '=  False;\n')
+        txtdump.write('Has Shades'.ljust(32, ' ') + '=  False;\n')
+        txtdump.write('Has Shirt'.ljust(32, ' ') + '=  False;\n')
+        txtdump.write('Speed Multiplier'.ljust(32, ' ') + '=  0.9765625;\n')
+        txtdump.write('Gravity Multiplier'.ljust(32, ' ') + '=  1.0;\n')
+        txtdump.write('NPC Bounce 1'.ljust(32, ' ') + '=  35.0;\n')
+        txtdump.write('NPC Bounce 2'.ljust(32, ' ') + '=  45.0;\n')
+        txtdump.write('NPC Bounce 3'.ljust(32, ' ') + '=  70.0;\n')
+        txtdump.write('Max No Damage Fall'.ljust(32, ' ') + '=  2048.0;\n')
+        txtdump.write('Health'.ljust(32, ' ') + '=  0x08;\n')
+        txtdump.write('Max Health'.ljust(32, ' ') + '=  0x08;\n')
+        txtdump.write('OOB Timer Step'.ljust(32, ' ') + '=  0x0004;\n')
+        txtdump.write('OOB Max Timer'.ljust(32, ' ') + '=  0x01E0;\n')
         
         #YOSHI
         txtdump.write('\n#--YOSHI--#\n')
-        txtdump.write('Max Juice\t\t=  0x5334;\n')
-        txtdump.write('Green Yoshi RGBA\t=  [ 0x40, 0xA1, 0x24, 0xFF ];\n')
-        txtdump.write('Orange Yoshi RGBA\t=  [ 0xFF, 0x8C, 0x1C, 0xFF ];\n')
-        txtdump.write('Purple Yoshi RGBA\t=  [ 0xAA, 0x4C, 0xFF, 0xFF ];\n')
-        txtdump.write('Pink Yoshi RGBA\t\t=  [ 0xFF, 0xA0, 0xBE, 0xFF ];\n')
-        txtdump.write('Max YSpd Init Flutter\t=  -5.0;\n')
-        txtdump.write('Flutter Acceleration\t=  1.2000000476837158;\n')
-        txtdump.write('Max Flutter Length\t=  0x0078;\n')
-        txtdump.write('Green Yoshi Mod\t\t=  False;\n')
-        txtdump.write('Free Egg Hatch\t\t=  False;\n')
+        txtdump.write('Max Juice'.ljust(32, ' ') + '=  0x5334;\n')
+        txtdump.write('Green Yoshi RGBA'.ljust(32, ' ') + '=  [ 0x40, 0xA1, 0x24, 0xFF ];\n')
+        txtdump.write('Orange Yoshi RGBA'.ljust(32, ' ') + '=  [ 0xFF, 0x8C, 0x1C, 0xFF ];\n')
+        txtdump.write('Purple Yoshi RGBA'.ljust(32, ' ') + '=  [ 0xAA, 0x4C, 0xFF, 0xFF ];\n')
+        txtdump.write('Pink Yoshi RGBA'.ljust(32, ' ') + '=  [ 0xFF, 0xA0, 0xBE, 0xFF ];\n')
+        txtdump.write('Max YSpd Init Flutter'.ljust(32, ' ') + '=  -5.0;\n')
+        txtdump.write('Flutter Acceleration'.ljust(32, ' ') + '=  1.2000000476837158;\n')
+        txtdump.write('Max Flutter Length'.ljust(32, ' ') + '=  0x0078;\n')
+        txtdump.write('Green Yoshi Mod'.ljust(32, ' ') + '=  False;\n')
+        txtdump.write('Free Egg Hatch'.ljust(32, ' ') + '=  False;\n')
 
         #MUSIC
         txtdump.write('\n#--MUSIC--#\n')
-        txtdump.write('Volume\t\t\t=  0.75;\t#(Between 0 and 1 inclusive)\n')
-        txtdump.write('Speed\t\t\t=  1.0;\t\t#(Lower number = faster)\n')
-        txtdump.write('Pitch\t\t\t=  1.0;\n')
-        txtdump.write('Play Music\t\t=  True;\n')
-        txtdump.write('Music ID\t\t=  0x0000;\n')
-        txtdump.write('Area ID\t\t\t=  0x00;\t#(Used for sound bank search)\n')
-        txtdump.write('Episode ID\t\t=  0x00;\t#(Used for sound bank search)\n')
+        txtdump.write('Volume'.ljust(32, ' ') + '=  0.75;'.ljust(32, ' ') + '#(Between 0 and 1 inclusive)\n')
+        txtdump.write('Speed'.ljust(32, ' ') + '=  1.0;'.ljust(32, ' ') + '#(Lower number = faster)\n')
+        txtdump.write('Pitch'.ljust(32, ' ') + '=  1.0;\n')
+        txtdump.write('Play Music'.ljust(32, ' ') + '=  True;\n')
+        txtdump.write('Music ID'.ljust(32, ' ') + '=  0x0000;\n')
+        txtdump.write('Area ID'.ljust(32, ' ') + '=  0x00;'.ljust(32, ' ') + '#(Used for sound bank search)\n')
+        txtdump.write('Episode ID'.ljust(32, ' ') + '=  0x00;'.ljust(32, ' ') + '#(Used for sound bank search)\n')
 
         #FLUDD
         txtdump.write('\n#--FLUDD--#\n')
-        txtdump.write('Primary Nozzle\t\t=  0x00;\t#(0 = Spray, 1 = Rocket, 2 = UnderWater\n\t\t\t\t\t# 3 = Yoshi, 4 = Hover, 5 = Turbo)\n')
-        txtdump.write('Secondary Nozzle\t=  0x04;\t#(0 = Spray, 1 = Rocket, 2 = UnderWater\n\t\t\t\t\t# 3 = Yoshi, 4 = Hover, 5 = Turbo)\n')
-        txtdump.write('Water RGBA\t\t=  [ 0x3C, 0x46, 0x78, 0x14 ];\n')
-        txtdump.write('Change Water Color\t=  False;\n')
+        txtdump.write('Primary Nozzle'.ljust(32, ' ') + '=  0x00;'.ljust(32, ' ') + '#(0 = Spray, 1 = Rocket, 2 = UnderWater\n'.ljust(32, ' ') + ' '*64 + '# 3 = Yoshi, 4 = Hover, 5 = Turbo)\n')
+        txtdump.write('Secondary Nozzle'.ljust(32, ' ') + '=  0x04;'.ljust(32, ' ') + '#(0 = Spray, 1 = Rocket, 2 = UnderWater\n'.ljust(32, ' ') + ' '*64 + '# 3 = Yoshi, 4 = Hover, 5 = Turbo)\n')
+        txtdump.write('Water RGBA'.ljust(32, ' ') + '=  [ 0x3C, 0x46, 0x78, 0x14 ];\n')
+        txtdump.write('Change Water Color'.ljust(32, ' ') + '=  False;\n')
         
 def set_attributes(file, dump=None, considerfolder=False):
-    if dest is None:
-        dest = os.path.abspath(os.path.normpath(os.path.splitext(file)[0].lstrip('\\').lstrip('/') + '.sme'))
+    if dump is None:
+        dump = os.path.abspath(os.path.normpath(os.path.splitext(file)[0].lstrip('\\').lstrip('/') + '.sme'))
     elif considerfolder:
-        dest = os.path.join(os.path.abspath(os.path.normpath(os.path.splitext(dest)[0].lstrip('\\').lstrip('/'))), os.path.basename(os.path.splitext(file)[0] + '.sme'))
+        dump = os.path.join(os.path.abspath(os.path.normpath(os.path.splitext(dump)[0].lstrip('\\').lstrip('/'))), os.path.basename(os.path.splitext(file)[0] + '.sme'))
     
-    if not os.path.exists(os.path.dirname(dest)) and os.path.dirname(dest) not in ('', '/'):
-        os.makedirs(os.path.dirname(dest))
+    if not os.path.exists(os.path.dirname(dump)) and os.path.dirname(dump) not in ('', '/'):
+        os.makedirs(os.path.dirname(dump))
 
     with open(file, 'r') as txtdump, open(dump, 'wb+') as sme_file:
         sme_file.write(b'CODE')
@@ -517,19 +517,19 @@ def set_attributes(file, dump=None, considerfolder=False):
 
 
 def get_attributes(file, dump=None, considerfolder=False):
-    if dest is None:
-        dest = os.path.abspath(os.path.normpath(os.path.splitext(file)[0].lstrip('\\').lstrip('/') + '.txt'))
+    if dump is None:
+        dump = os.path.abspath(os.path.normpath(os.path.splitext(file)[0].lstrip('\\').lstrip('/') + '.txt'))
     elif considerfolder:
-        dest = os.path.join(os.path.abspath(os.path.normpath(os.path.splitext(dest)[0].lstrip('\\').lstrip('/'))), os.path.basename(os.path.splitext(file)[0] + '.txt'))
+        dump = os.path.join(os.path.abspath(os.path.normpath(os.path.splitext(dump)[0].lstrip('\\').lstrip('/'))), os.path.basename(os.path.splitext(file)[0] + '.txt'))
     
-    if not os.path.exists(os.path.dirname(dest)) and os.path.dirname(dest) not in ('', '/'):
-        os.makedirs(os.path.dirname(dest))
+    if not os.path.exists(os.path.dirname(dump)) and os.path.dirname(dump) not in ('', '/'):
+        os.makedirs(os.path.dirname(dump))
 
-    activelist = ['Modify Light\t\t=  ',
-                  'Modify Mario\t\t=  ',
-                  'Modify Yoshi\t\t=  ',
-                  'Modify Music\t\t=  ',
-                  'Modify Fludd\t\t=  ']
+    activelist = ['Modify Light'.ljust(32, ' ') + '=  ',
+                  'Modify Mario'.ljust(32, ' ') + '=  ',
+                  'Modify Yoshi'.ljust(32, ' ') + '=  ',
+                  'Modify Music'.ljust(32, ' ') + '=  ',
+                  'Modify Fludd'.ljust(32, ' ') + '=  ']
     
     with(open(file, 'rb')) as smeFile:
         sme_file = SMEFile(smeFile)
@@ -537,27 +537,27 @@ def get_attributes(file, dump=None, considerfolder=False):
     with open(dump, 'w+') as txtdump:
         txtdump.write(wrap_text('SME FILE', True) + '\n\n')
         sme_file.rawdata.seek(0x4)
-        txtdump.write('Initialize Address\t=  0x{};\t#(0 = Load into internal heap)\n\n'.format(sme_file.loadAddress.hex().upper()))
+        txtdump.write('Initialize Address'.ljust(32, ' ') + '=  0x{};'.ljust(32, ' ') + '#(0 = Load into internal heap)\n\n'.format(sme_file.loadAddress.hex().upper()))
         
         sme_file.rawdata.seek(0x18)
         stagetypes = int.from_bytes(sme_file.rawdata.read(1), byteorder='big', signed=False)
 
         if (stagetypes & 0x8) == 1:
-            txtdump.write('Is Extra Stage\t\t=  True;\n')
+            txtdump.write('Is Extra Stage'.ljust(32, ' ') + '=  True;\n')
         else:
-            txtdump.write('Is Extra Stage\t\t=  False;\n')
+            txtdump.write('Is Extra Stage'.ljust(32, ' ') + '=  False;\n')
         if (stagetypes & 0x4) == 1:
-            txtdump.write('Is Diving Stage\t\t=  True;\n')
+            txtdump.write('Is Diving Stage'.ljust(32, ' ') + '=  True;\n')
         else:
-            txtdump.write('Is Diving Stage\t\t=  False;\n')
+            txtdump.write('Is Diving Stage'.ljust(32, ' ') + '=  False;\n')
         if (stagetypes & 0x2) == 1:
-            txtdump.write('Is Option Stage\t\t=  True;\n')
+            txtdump.write('Is Option Stage'.ljust(32, ' ') + '=  True;\n')
         else:
-            txtdump.write('Is Option Stage\t\t=  False;\n')
+            txtdump.write('Is Option Stage'.ljust(32, ' ') + '=  False;\n')
         if (stagetypes & 0x1) == 1:
-            txtdump.write('Is Multiplayer Stage\t=  True;\n\n')
+            txtdump.write('Is Multiplayer Stage'.ljust(32, ' ') + '=  True;\n\n')
         else:
-            txtdump.write('Is Multiplayer Stage\t=  False;\n\n')
+            txtdump.write('Is Multiplayer Stage'.ljust(32, ' ') + '=  False;\n\n')
         
         for i, item in enumerate(sme_file.activeTypes):
             txtdump.write(activelist[i] + byte2bool(item) + ';\n')
@@ -565,20 +565,20 @@ def get_attributes(file, dump=None, considerfolder=False):
         #LIGHT
         txtdump.write('\n#--LIGHT--#\n')
         sme_file.rawdata.seek(0x15)
-        txtdump.write('Light State\t\t=  0x{};\t#(0 = None, 1 = StaticPos, 2 = Follow Mario)\n'.format(sme_file.rawdata.read(1).hex().upper()))
+        txtdump.write('Light State'.ljust(32, ' ') + '=  0x{};'.ljust(32, ' ') + '#(0 = None, 1 = StaticPos, 2 = Follow Mario)\n'.format(sme_file.rawdata.read(1).hex().upper()))
         sme_file.rawdata.seek(0x20)
         lightcoordinates = struct.unpack('>fff', sme_file.rawdata.read(12))
-        txtdump.write('XYZ Coordinates\t\t=  ( {}, {}, {} );\n'.format(lightcoordinates[0],
+        txtdump.write('XYZ Coordinates'.ljust(32, ' ') + '=  ( {}, {}, {} );\n'.format(lightcoordinates[0],
                                                                    lightcoordinates[1],
                                                                    lightcoordinates[2]))
-        txtdump.write('Light Size\t\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('Layer Step\t\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('Light RGBA\t\t=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
+        txtdump.write('Light Size'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('Layer Step'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('Light RGBA'.ljust(32, ' ') + '=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper()))
-        txtdump.write('Layers\t\t\t=  0x{};\n'.format(sme_file.rawdata.read(1).hex().upper()))
-        txtdump.write('Lightness\t\t=  0x{};\t#(if 0xFF (255), it is auto calculated in game)\n'.format(sme_file.rawdata.read(1).hex().upper()))
+        txtdump.write('Layers'.ljust(32, ' ') + '=  0x{};\n'.format(sme_file.rawdata.read(1).hex().upper()))
+        txtdump.write('Lightness'.ljust(32, ' ') + '=  0x{};'.ljust(32, ' ') + '#(if 0xFF (255), it is auto calculated in game)\n'.format(sme_file.rawdata.read(1).hex().upper()))
 
         #MARIO
         txtdump.write('\n#--MARIO--#\n')
@@ -586,81 +586,81 @@ def get_attributes(file, dump=None, considerfolder=False):
         marioStates = int.from_bytes(sme_file.rawdata.read(2), byteorder='big', signed=False)
 
         if (marioStates & 0x80) == 1:
-            txtdump.write('Has Fludd\t\t=  True;\n')
+            txtdump.write('Has Fludd'.ljust(32, ' ') + '=  True;\n')
         else:
-            txtdump.write('Has Fludd\t\t=  False;\n')
+            txtdump.write('Has Fludd'.ljust(32, ' ') + '=  False;\n')
         if (marioStates & 0x40) == 1:
-            txtdump.write('Has Helmet\t\t=  True;\n')
+            txtdump.write('Has Helmet'.ljust(32, ' ') + '=  True;\n')
         else:
-            txtdump.write('Has Helmet\t\t=  False;\n')
+            txtdump.write('Has Helmet'.ljust(32, ' ') + '=  False;\n')
         if (marioStates & 0x20) == 1:
-            txtdump.write('Has Shades\t\t=  True;\n')
+            txtdump.write('Has Shades'.ljust(32, ' ') + '=  True;\n')
         else:
-            txtdump.write('Has Shades\t\t=  False;\n')
+            txtdump.write('Has Shades'.ljust(32, ' ') + '=  False;\n')
         if (marioStates & 0x10) == 1:
-            txtdump.write('Has Shirt\t\t=  True;\n')
+            txtdump.write('Has Shirt'.ljust(32, ' ') + '=  True;\n')
         else:
-            txtdump.write('Has Shirt\t\t=  False;\n')
+            txtdump.write('Has Shirt'.ljust(32, ' ') + '=  False;\n')
 
         sme_file.rawdata.seek(0x3C)
-        txtdump.write('Speed Multiplier\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('Gravity Multiplier\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('NPC Bounce 1\t\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('NPC Bounce 2\t\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('NPC Bounce 3\t\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('Max No Damage Fall\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('Health\t\t\t=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
-        txtdump.write('Max Health\t\t=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
-        txtdump.write('OOB Timer Step\t\t=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
-        txtdump.write('OOB Max Timer\t\t=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
+        txtdump.write('Speed Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('Gravity Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('NPC Bounce 1'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('NPC Bounce 2'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('NPC Bounce 3'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('Max No Damage Fall'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('Health'.ljust(32, ' ') + '=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
+        txtdump.write('Max Health'.ljust(32, ' ') + '=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
+        txtdump.write('OOB Timer Step'.ljust(32, ' ') + '=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
+        txtdump.write('OOB Max Timer'.ljust(32, ' ') + '=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
         
         #YOSHI
         txtdump.write('\n#--YOSHI--#\n')
         sme_file.rawdata.seek(0x60)
-        txtdump.write('Max Juice\t\t=  0x{:04X};\n'.format(int.from_bytes(sme_file.rawdata.read(4), byteorder='big', signed=True)))
-        txtdump.write('Green Yoshi RGBA\t=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
+        txtdump.write('Max Juice'.ljust(32, ' ') + '=  0x{:04X};\n'.format(int.from_bytes(sme_file.rawdata.read(4), byteorder='big', signed=True)))
+        txtdump.write('Green Yoshi RGBA'.ljust(32, ' ') + '=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper()))
-        txtdump.write('Orange Yoshi RGBA\t=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
+        txtdump.write('Orange Yoshi RGBA'.ljust(32, ' ') + '=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper()))
-        txtdump.write('Purple Yoshi RGBA\t=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
+        txtdump.write('Purple Yoshi RGBA'.ljust(32, ' ') + '=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper()))
-        txtdump.write('Pink Yoshi RGBA\t\t=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
+        txtdump.write('Pink Yoshi RGBA'.ljust(32, ' ') + '=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper()))
-        txtdump.write('Max YSpd Init Flutter\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('Flutter Acceleration\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('Max Flutter Length\t=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
-        txtdump.write('Green Yoshi Mod\t\t=  {};\n'.format(byte2bool(sme_file.rawdata.read(1))))
-        txtdump.write('Free Egg Hatch\t\t=  {};\n'.format(byte2bool(sme_file.rawdata.read(1))))
+        txtdump.write('Max YSpd Init Flutter'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('Flutter Acceleration'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('Max Flutter Length'.ljust(32, ' ') + '=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
+        txtdump.write('Green Yoshi Mod'.ljust(32, ' ') + '=  {};\n'.format(byte2bool(sme_file.rawdata.read(1))))
+        txtdump.write('Free Egg Hatch'.ljust(32, ' ') + '=  {};\n'.format(byte2bool(sme_file.rawdata.read(1))))
 
         #MUSIC
         txtdump.write('\n#--MUSIC--#\n')
         sme_file.rawdata.seek(0x80)
-        txtdump.write('Volume\t\t\t=  {};\t#(Between 0 and 1 inclusive)\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('Speed\t\t\t=  {};\t\t#(Lower number = faster)\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('Pitch\t\t\t=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
-        txtdump.write('Play Music\t\t=  {};\n'.format(byte2bool(sme_file.rawdata.read(1))))
-        txtdump.write('Music ID\t\t=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
-        txtdump.write('Area ID\t\t\t=  0x{};\t#(Used for sound bank search)\n'.format(sme_file.rawdata.read(1).hex().upper()))
-        txtdump.write('Episode ID\t\t=  0x{};\t#(Used for sound bank search)\n'.format(sme_file.rawdata.read(1).hex().upper()))
+        txtdump.write('Volume'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '#(Between 0 and 1 inclusive)\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('Speed'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '#(Lower number = faster)\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('Pitch'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', sme_file.rawdata.read(4))[0]))
+        txtdump.write('Play Music'.ljust(32, ' ') + '=  {};\n'.format(byte2bool(sme_file.rawdata.read(1))))
+        txtdump.write('Music ID'.ljust(32, ' ') + '=  0x{};\n'.format(sme_file.rawdata.read(2).hex().upper()))
+        txtdump.write('Area ID'.ljust(32, ' ') + '=  0x{};'.ljust(32, ' ') + '#(Used for sound bank search)\n'.format(sme_file.rawdata.read(1).hex().upper()))
+        txtdump.write('Episode ID'.ljust(32, ' ') + '=  0x{};'.ljust(32, ' ') + '#(Used for sound bank search)\n'.format(sme_file.rawdata.read(1).hex().upper()))
 
         #FLUDD
         txtdump.write('\n#--FLUDD--#\n')
         sme_file.rawdata.seek(0x90)
-        txtdump.write('Primary Nozzle\t\t=  0x{};\t#(0 = Spray, 1 = Rocket, 2 = UnderWater\n\t\t\t\t\t# 3 = Yoshi, 4 = Hover, 5 = Turbo)\n'.format(sme_file.rawdata.read(1).hex().upper()))
-        txtdump.write('Secondary Nozzle\t=  0x{};\t#(0 = Spray, 1 = Rocket, 2 = UnderWater\n\t\t\t\t\t# 3 = Yoshi, 4 = Hover, 5 = Turbo)\n'.format(sme_file.rawdata.read(1).hex().upper()))
-        txtdump.write('Water RGBA\t\t=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
+        txtdump.write('Primary Nozzle'.ljust(32, ' ') + '=  0x{};'.ljust(32, ' ') + '#(0 = Spray, 1 = Rocket, 2 = UnderWater\n'.ljust(32, ' ') + '# 3 = Yoshi, 4 = Hover, 5 = Turbo)\n'.format(sme_file.rawdata.read(1).hex().upper()))
+        txtdump.write('Secondary Nozzle'.ljust(32, ' ') + '=  0x{};'.ljust(32, ' ') + '#(0 = Spray, 1 = Rocket, 2 = UnderWater\n'.ljust(32, ' ') + '# 3 = Yoshi, 4 = Hover, 5 = Turbo)\n'.format(sme_file.rawdata.read(1).hex().upper()))
+        txtdump.write('Water RGBA'.ljust(32, ' ') + '=  [ 0x{}, 0x{}, 0x{}, 0x{} ];\n'.format(sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper(),
                                                             sme_file.rawdata.read(1).hex().upper()))
-        txtdump.write('Change Water Color\t=  {};\n'.format(byte2bool(sme_file.rawdata.read(1))))
+        txtdump.write('Change Water Color'.ljust(32, ' ') + '=  {};\n'.format(byte2bool(sme_file.rawdata.read(1))))
         
 
 if __name__ == "__main__":
