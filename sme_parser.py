@@ -717,7 +717,7 @@ if __name__ == "__main__":
                     parser.print_help(sys.stderr)
         else:
             if args.init == True:
-                init_attributes(filename)
+                init_attributes(args.file)
             else:
                 parser.print_help(sys.stderr)
     except FileNotFoundError as e:
