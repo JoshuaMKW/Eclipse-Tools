@@ -200,6 +200,7 @@ def init_attributes(dest=None):
 
         txtdump.write('\n#--Misc--#\n\n')
 
+        txtdump.write('Can Breathe Underwater'.ljust(32, ' ') + '=  False;\n'.ljust(32, ' '))
         txtdump.write('Name Key'.ljust(32, ' ') + '=  "Put a name in these quotes!";')
         
 def set_attributes(file, dest=None, considerfolder=False):
@@ -347,6 +348,11 @@ def set_attributes(file, dest=None, considerfolder=False):
                 params_file.write(bool2byte(boolean))
                 align_file(params_file, 4)
 
+            elif 'Can Breathe Underwater' in line:
+                boolean = get_bool_key(line)
+                params_file.write(bool2byte(boolean))
+                align_file(params_file, 0x40)
+
             elif 'Name Key' in line:
                 name = get_string_key(line)
                 params_file.write(name.encode('utf-8') + b'\x00')
@@ -414,7 +420,7 @@ def get_attributes(file, dest=None, considerfolder=False):
         txtdump.write('NPC Bounce 3 Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
         txtdump.write('Max Fall No Damage Multi'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
         txtdump.write('Base Jump Height Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
-        txtdump.write('Extra Jump Height Multiplier'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '#baseJumpHeight * (multiplier^curJump)\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
+        txtdump.write('Extra Jump Height Multiplier'.ljust(32, ' ') + '=  {};'.ljust(32, ' ').format(struct.unpack('>f', paramFile.rawdata.read(4))[0]) + '#baseJumpHeight * (multiplier^curJump)\n')
         txtdump.write('Extra Jump F-Speed Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
         txtdump.write('Forward Speed Multiplier'.ljust(32, ' ') + '=  {};\n'.format(struct.unpack('>f', paramFile.rawdata.read(4))[0]))
         
@@ -435,37 +441,40 @@ def get_attributes(file, dest=None, considerfolder=False):
                                                                                      paramFile.rawdata.read(1).hex().upper(),
                                                                                      paramFile.rawdata.read(1).hex().upper()))
 
-        txtdump.write('Fludd Cleaning Type'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# 0 = None, 1 = Clean, 2 = Goop\n'.format(int.from_bytes(paramFile.rawdata.read(4),
-                                                                                                    byteorder='big',
-                                                                                                    signed=False)))
-        txtdump.write('Spray Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
-                                                                                                                               byteorder='big',
-                                                                                                                               signed=False)))
-        txtdump.write('Rocket Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
-                                                                                                                               byteorder='big',
-                                                                                                                               signed=False)))
+        txtdump.write('Fludd Cleaning Type'.ljust(32, ' ') + '=  {};'.ljust(32, ' ').format(int.from_bytes(paramFile.rawdata.read(4),
+                                                                                            byteorder='big',
+                                                                                            signed=False)) + '# 0 = None, 1 = Clean, 2 = Goop\n')
+        txtdump.write('Spray Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ').format(int.from_bytes(paramFile.rawdata.read(1),
+                                                                                                 byteorder='big',
+                                                                                                 signed=False)) + '# The index of the joint, 14 is the chest joint\n')
+        txtdump.write('Rocket Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ').format(int.from_bytes(paramFile.rawdata.read(1),
+                                                                                                  byteorder='big',
+                                                                                                  signed=False)) + '# The index of the joint, 14 is the chest joint\n')
         paramFile.rawdata.seek(1, 1)
         
-        txtdump.write('Hover Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
-                                                                                                                               byteorder='big',
-                                                                                                                               signed=False)))
-        txtdump.write('Turbo Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# The index of the joint, 14 is the chest joint\n'.format(int.from_bytes(paramFile.rawdata.read(1),
-                                                                                                                               byteorder='big',
-                                                                                                                               signed=False)))
+        txtdump.write('Hover Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ').format(int.from_bytes(paramFile.rawdata.read(1),
+                                                                                                 byteorder='big',
+                                                                                                 signed=False)) + '# The index of the joint, 14 is the chest joint\n')
+        txtdump.write('Turbo Nozzle Joint Index'.ljust(32, ' ') + '=  {};'.ljust(32, ' ').format(int.from_bytes(paramFile.rawdata.read(1),
+                                                                                                 byteorder='big',
+                                                                                                 signed=False)) + '# The index of the joint, 14 is the chest joint\n')
         paramFile.rawdata.seek(3, 1)
         
-        txtdump.write('Can Fludd Clean Seals'.ljust(32, ' ') + '=  {};'.ljust(32, ' ') + '# Yoshi seals\n'.format(byte2bool(paramFile.rawdata.read(1))))
+        txtdump.write('Can Fludd Clean Seals'.ljust(32, ' ') + '=  {};'.ljust(32, ' ').format(byte2bool(paramFile.rawdata.read(1))) + '# Yoshi seals\n')
         
         txtdump.write('\n#--Misc--#\n\n')
         
         paramFile.rawdata.seek(0x5C)
 
-        char = paramFile.rawdata.read(1)
-        namekey = ''
+        txtdump.write('Can Breathe Underwater'.ljust(32, ' ') + '=  {};\n'.ljust(32, ' ').format(byte2bool(paramFile.rawdata.read(1))))
 
-        while char and char != b'\x00':
+        paramFile.rawdata.seek(0xA0)
+
+        namekey = ''
+        while char := paramFile.rawdata.read(1):
+            if char == b'\x00':
+                break
             namekey += char.decode('utf-8')
-            char = paramFile.rawdata.read(1)
 
         txtdump.write('Name Key'.ljust(32, ' ') + '=  "{}";\n'.format(namekey))
 
