@@ -351,7 +351,7 @@ def set_attributes(file, dest=None, considerfolder=False):
             elif 'Can Breathe Underwater' in line:
                 boolean = get_bool_key(line)
                 params_file.write(bool2byte(boolean))
-                align_file(params_file, 0x40)
+                align_file(params_file, 0xA0)
 
             elif 'Name Key' in line:
                 name = get_string_key(line)
