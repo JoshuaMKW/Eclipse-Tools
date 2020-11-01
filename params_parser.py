@@ -2,13 +2,9 @@ import os
 import re
 import sys
 import struct
-import binascii
 import json
 import argparse
 import glob
-import tempfile
-
-from io import BytesIO
 
 def wrap_text(string, comment=False) -> str:
     if comment is False:
