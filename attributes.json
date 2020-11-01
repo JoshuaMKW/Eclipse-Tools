@@ -6,14 +6,14 @@
                 "comment": "",
                 "type": "bool",
                 "default": true,
-                "offset": 1
+                "offset": 2
             },
             {
                 "name": "Can Ride Yoshi",
                 "comment": "",
                 "type": "bool",
                 "default": true,
-                "offset": 2
+                "offset": 1
             },
             {
                 "name": "Has Scuba Helmet",
