@@ -118,7 +118,7 @@
                 "name": "Max Fall No Damage Multi",
                 "comment": "",
                 "type": "f32",
-                "default": [ 1.0, 1.0, 1.0 ],
+                "default": 1.0,
                 "offset": 44
             },
             {

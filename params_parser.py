@@ -241,7 +241,7 @@ class SmeFileParser(JsonParser):
         if not os.path.exists(os.path.dirname(dest)) and os.path.dirname(dest) not in ('', '/'):
             os.makedirs(os.path.dirname(dest))
 
-        with open(f, "r") as params_file, open(dest, "w") as newfile:
+        with open(f, "rb") as params_file, open(dest, "w") as newfile:
             newfile.write(wrap_text("PARAMS", True) + "\n")
 
             for section in self.jsonData:
@@ -259,7 +259,7 @@ class SmeFileParser(JsonParser):
                             if isinstance(item["default"], (tuple, list)):
                                 _valueList = []
                                 for _ in range(len(item["default"])):
-                                    _valueList.append(str(struct.unpack('>f', params_file.rawdata.read(4))[0]))
+                                    _valueList.append(str(struct.unpack('>f', params_file.read(4))[0]))
                                 _valueList = ",".join(_valueList)
                                 value = f"[{_valueList}]"
                             else:
