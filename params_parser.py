@@ -256,7 +256,7 @@ class SmeFileParser(JsonParser):
                                 _valueList = []
                                 for _ in range(len(item["default"])):
                                     _valueList.append(str(struct.unpack('>f', params_file.read(4))[0]))
-                                _valueList = ",".join(_valueList)
+                                _valueList = ", ".join(_valueList)
                                 value = f"[{_valueList}]"
                             else:
                                 value = struct.unpack('>f', params_file.read(4))[0]
@@ -266,7 +266,7 @@ class SmeFileParser(JsonParser):
                                 _valueList = []
                                 for _ in range(len(item["default"])):
                                     _valueList.append(byte2bool(params_file.read(1)))
-                                _valueList = ",".join(_valueList)
+                                _valueList = ", ".join(_valueList)
                                 value = f"[{_valueList}]"
                             else:
                                 value = byte2bool(params_file.read(1))
@@ -285,7 +285,7 @@ class SmeFileParser(JsonParser):
                                 _valueList = []
                                 for _ in range(len(item["default"])):
                                     _valueList.append(str(int.from_bytes(params_file.read(size), byteorder='big', signed='s' in item["type"])))
-                                _valueList = ",".join(_valueList)
+                                _valueList = ", ".join(_valueList)
                                 value = f"[{_valueList}]"
                             else:
                                 value = int.from_bytes(params_file.read(size), byteorder='big', signed='s' in item["type"])
@@ -390,7 +390,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     matchingfiles = glob.glob(args.file)
-    paramParser = SmeFileParser("attributes.json", useFolders=(len(matchingfiles) > 1))
+    paramParser = SmeFileParser(resource_path("attributes.json"), useFolders=(len(matchingfiles) > 1))
 
     try:
         if len(matchingfiles) > 0:
