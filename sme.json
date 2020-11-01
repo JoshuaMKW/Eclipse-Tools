@@ -1,0 +1,267 @@
+[
+    {
+        "Light": [
+            {
+                "name": "Can Use Fludd",
+                "comment": "",
+                "type": "bool",
+                "default": true,
+                "offset": 2
+            },
+            {
+                "name": "Can Ride Yoshi",
+                "comment": "",
+                "type": "bool",
+                "default": true,
+                "offset": 1
+            },
+            {
+                "name": "Has Scuba Helmet",
+                "comment": "",
+                "type": "bool",
+                "default": false,
+                "offset": 3
+            },
+            {
+                "name": "Has Sunglasses",
+                "comment": "",
+                "type": "bool",
+                "default": false,
+                "offset": 4
+            },
+            {
+                "name": "Has Shine Shirt",
+                "comment": "",
+                "type": "bool",
+                "default": false,
+                "offset": 5
+            }
+        ]
+    },
+    {
+        "Mario": [
+            {
+                "name": "Max Jumps",
+                "comment": "",
+                "type": "u8",
+                "default": 1,
+                "offset": 0
+            },
+            {
+                "name": "Start Health",
+                "comment": "",
+                "type": "u16",
+                "default": 8,
+                "offset": 8
+            },
+            {
+                "name": "Max Health",
+                "comment": "",
+                "type": "u16",
+                "default": 8,
+                "offset": 10
+            },
+            {
+                "name": "OOB Timer Step",
+                "comment": "",
+                "type": "u16",
+                "default": 4,
+                "offset": 12
+            },
+            {
+                "name": "OOB Max Timer",
+                "comment": "",
+                "type": "u16",
+                "default": 480,
+                "offset": 14
+            }
+        ]
+    },
+    {
+        "Yoshi": [
+            {
+                "name": "Size XYZ Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": [ 1.0, 1.0, 1.0 ],
+                "offset": 16
+            },
+            {
+                "name": "Gravity Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 28
+            },
+            {
+                "name": "NPC Bounce 1 Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 32
+            },
+            {
+                "name": "NPC Bounce 2 Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 36
+            },
+            {
+                "name": "NPC Bounce 3 Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 40
+            },
+            {
+                "name": "Max Fall No Damage Multi",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 44
+            },
+            {
+                "name": "Base Jump Height Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 48
+            },
+            {
+                "name": "Extra Jump Height Multiplier",
+                "comment": "baseJumpHeight * (multiplier^curJump)",
+                "type": "f32",
+                "default": 0.875,
+                "offset": 52
+            },
+            {
+                "name": "Extra Jump F-Speed Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 56
+            },
+            {
+                "name": "Forward Speed Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 60
+            },
+            {
+                "name": "Underwater Health Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 92
+            }
+        ]
+    },
+    {
+        "Music": [
+            {
+                "name": "Enable Spray Nozzle",
+                "comment": "",
+                "type": "bool",
+                "default": true,
+                "offset": 64
+            },
+            {
+                "name": "Enable Rocket Nozzle",
+                "comment": "",
+                "type": "bool",
+                "default": true,
+                "offset": 65
+            },
+            {
+                "name": "Enable Water Nozzle",
+                "comment": "",
+                "type": "bool",
+                "default": true,
+                "offset": 66
+            },
+            {
+                "name": "Enable Hover Nozzle",
+                "comment": "",
+                "type": "bool",
+                "default": true,
+                "offset": 67
+            },
+            {
+                "name": "Enable Turbo Nozzle",
+                "comment": "",
+                "type": "bool",
+                "default": true,
+                "offset": 68
+            },
+            {
+                "name": "Fludd Water Color",
+                "comment": "",
+                "type": "u8",
+                "default": [ 60, 70, 120, 20 ],
+                "offset": 72
+            },
+            {
+                "name": "Fludd Cleaning Type",
+                "comment": "0 = None, 1 = Clean, 2 = Goop",
+                "type": "u32",
+                "default": 1,
+                "offset": 76
+            },
+            {
+                "name": "Spray Nozzle Joint Index",
+                "comment": "The index of the joint, 14 is the chest joint",
+                "type": "u8",
+                "default": 14,
+                "offset": 80
+            },
+            {
+                "name": "Rocket Nozzle Joint Index",
+                "comment": "The index of the joint, 14 is the chest joint",
+                "type": "u8",
+                "default": 14,
+                "offset": 81
+            },
+            {
+                "name": "Water Nozzle Joint Index",
+                "comment": "The index of the joint, 14 is the chest joint",
+                "type": "u8",
+                "default": 14,
+                "offset": 82
+            },
+            {
+                "name": "Hover Nozzle Joint Index",
+                "comment": "The index of the joint, 14 is the chest joint",
+                "type": "u8",
+                "default": 14,
+                "offset": 83
+            },
+            {
+                "name": "Turbo Nozzle Joint Index",
+                "comment": "The index of the joint, 14 is the chest joint",
+                "type": "u8",
+                "default": 14,
+                "offset": 84
+            },
+            {
+                "name": "Can Fludd Clean Seals",
+                "comment": "Yoshi seals",
+                "type": "bool",
+                "default": false,
+                "offset": 88
+            }
+        ]
+    },
+    {
+        "Fludd": [
+            {
+                "name": "Name Key",
+                "comment": "",
+                "type": "string",
+                "default": "Insert name in these quotes!",
+                "offset": 160
+            }
+        ]
+    }
+]

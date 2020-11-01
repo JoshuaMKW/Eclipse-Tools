@@ -205,7 +205,7 @@
             {
                 "name": "Fludd Cleaning Type",
                 "comment": "0 = None, 1 = Clean, 2 = Goop",
-                "type": "u32",
+                "type": "u8",
                 "default": 1,
                 "offset": 76
             },
@@ -214,42 +214,42 @@
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
-                "offset": 80
+                "offset": 77
             },
             {
                 "name": "Rocket Nozzle Joint Index",
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
-                "offset": 81
+                "offset": 78
             },
             {
                 "name": "Water Nozzle Joint Index",
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
-                "offset": 82
+                "offset": 79
             },
             {
                 "name": "Hover Nozzle Joint Index",
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
-                "offset": 83
+                "offset": 80
             },
             {
                 "name": "Turbo Nozzle Joint Index",
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
-                "offset": 84
+                "offset": 81
             },
             {
                 "name": "Can Fludd Clean Seals",
                 "comment": "Yoshi seals",
                 "type": "bool",
                 "default": false,
-                "offset": 88
+                "offset": 82
             }
         ]
     },
