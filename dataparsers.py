@@ -141,7 +141,7 @@ class JsonParser(object):
 
         self.open(f)
 
-    def open(self, f):
+    def open(self, f: str):
         self._currentfilepath = f
         with open(f, "r") as jsonf:
             self._data = jsonf.read()
@@ -150,11 +150,11 @@ class JsonParser(object):
     def close(self):
         self._data = None
 
-    def save(self, file: str = None):
-        if file is None:
-            file = self._currentfilepath
+    def save(self, f: str = None):
+        if f is None:
+            f = self._currentfilepath
         
-        with open(file, "w") as jsonf:
+        with open(f, "w") as jsonf:
             json.dump(self.jsonData, jsonf)
 
     @staticmethod

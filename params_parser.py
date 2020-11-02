@@ -52,16 +52,15 @@ if __name__ == '__main__':
     try:
         if len(matchingfiles) > 0:
             for filename in matchingfiles:
-                if not filename.lower().endswith('.bin') and args.dump is True:
-                    print('Input file is not a .bin file')
-                    continue
-                elif not filename.lower().endswith('.txt') and args.compile is True:
-                    print('Input file is not a .txt file')
-                    continue
-                
                 if args.job == 'd':
+                    if not filename.lower().endswith('.bin'):
+                        print(f'{filename} is not a .bin file')
+                        continue
                     paramParser.decode_bin(filename, args.dest)
                 elif args.job == 'c':
+                    if not filename.lower().endswith('.txt'):
+                        print('Input file is not a .txt file')
+                        continue
                     paramParser.encode_txt(filename, args.dest)
                 elif args.job == 'i':
                     paramParser.init_file(filename)
