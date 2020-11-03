@@ -1,266 +1,333 @@
 [
     {
-        "Light": [
+        "Globals": [
             {
-                "name": "Can Use Fludd",
-                "comment": "",
-                "type": "bool",
-                "default": true,
-                "offset": 2
-            },
-            {
-                "name": "Can Ride Yoshi",
-                "comment": "",
-                "type": "bool",
-                "default": true,
-                "offset": 1
-            },
-            {
-                "name": "Has Scuba Helmet",
-                "comment": "",
-                "type": "bool",
-                "default": false,
-                "offset": 3
-            },
-            {
-                "name": "Has Sunglasses",
-                "comment": "",
-                "type": "bool",
-                "default": false,
+                "name": "Initialization Address",
+                "comment": "Set to 0 for auto allocation",
+                "type": "u32",
+                "default": 0,
                 "offset": 4
             },
             {
-                "name": "Has Shine Shirt",
+                "name": "Enable Shine Shadow",
                 "comment": "",
                 "type": "bool",
                 "default": false,
-                "offset": 5
+                "offset": 16
+            },
+            {
+                "name": "Enable Mario Edits",
+                "comment": "",
+                "type": "bool",
+                "default": false,
+                "offset": 17
+            },
+            {
+                "name": "Enable Yoshi Edits",
+                "comment": "",
+                "type": "bool",
+                "default": false,
+                "offset": 18
+            },
+            {
+                "name": "Enable Music Edits",
+                "comment": "",
+                "type": "bool",
+                "default": false,
+                "offset": 19
+            },
+            {
+                "name": "Enable Fludd Edits",
+                "comment": "",
+                "type": "bool",
+                "default": false,
+                "offset": 20
+            }
+        ]
+    },
+    {
+        "Light": [
+            {
+                "name": "Type",
+                "comment": "0 = Off, 1 = Static, 2 = Relative to Mario",
+                "type": "bool",
+                "default": [0.0, 3600.0, -7458.0],
+                "offset": 21
+            },
+            {
+                "name": "Coordinates",
+                "comment": "",
+                "type": "f32",
+                "default": [0.0, 3600.0, -7458.0],
+                "offset": 32
+            },
+            {
+                "name": "Size",
+                "comment": "",
+                "type": "f32",
+                "default": 8000.0,
+                "offset": 44
+            },
+            {
+                "name": "Step",
+                "comment": "Increase in size per layer",
+                "type": "f32",
+                "default": 100.0,
+                "offset": 48
+            },
+            {
+                "name": "Color",
+                "comment": "",
+                "type": "u8",
+                "default": [0, 20, 40, 0],
+                "offset": 52
+            },
+            {
+                "name": "Layers",
+                "comment": "",
+                "type": "u8",
+                "default": 5,
+                "offset": 56
+            },
+            {
+                "name": "Darkness",
+                "comment": "0 <-> 255 == dark <-> light",
+                "type": "u8",
+                "default": 5,
+                "offset": 57
             }
         ]
     },
     {
         "Mario": [
             {
-                "name": "Max Jumps",
-                "comment": "",
-                "type": "u8",
-                "default": 1,
-                "offset": 0
-            },
-            {
-                "name": "Start Health",
-                "comment": "",
-                "type": "u16",
-                "default": 8,
-                "offset": 8
-            },
-            {
-                "name": "Max Health",
-                "comment": "",
-                "type": "u16",
-                "default": 8,
-                "offset": 10
-            },
-            {
-                "name": "OOB Timer Step",
-                "comment": "",
-                "type": "u16",
-                "default": 4,
-                "offset": 12
-            },
-            {
-                "name": "OOB Max Timer",
-                "comment": "",
-                "type": "u16",
-                "default": 480,
-                "offset": 14
-            }
-        ]
-    },
-    {
-        "Yoshi": [
-            {
-                "name": "Size XYZ Multiplier",
-                "comment": "",
-                "type": "f32",
-                "default": [ 1.0, 1.0, 1.0 ],
-                "offset": 16
-            },
-            {
-                "name": "Gravity Multiplier",
-                "comment": "",
-                "type": "f32",
-                "default": 1.0,
-                "offset": 28
-            },
-            {
-                "name": "NPC Bounce 1 Multiplier",
-                "comment": "",
-                "type": "f32",
-                "default": 1.0,
-                "offset": 32
-            },
-            {
-                "name": "NPC Bounce 2 Multiplier",
-                "comment": "",
-                "type": "f32",
-                "default": 1.0,
-                "offset": 36
-            },
-            {
-                "name": "NPC Bounce 3 Multiplier",
-                "comment": "",
-                "type": "f32",
-                "default": 1.0,
-                "offset": 40
-            },
-            {
-                "name": "Max Fall No Damage Multi",
-                "comment": "",
-                "type": "f32",
-                "default": 1.0,
-                "offset": 44
-            },
-            {
-                "name": "Base Jump Height Multiplier",
-                "comment": "",
-                "type": "f32",
-                "default": 1.0,
-                "offset": 48
-            },
-            {
-                "name": "Extra Jump Height Multiplier",
-                "comment": "baseJumpHeight * (multiplier^curJump)",
-                "type": "f32",
-                "default": 0.875,
-                "offset": 52
-            },
-            {
-                "name": "Extra Jump F-Speed Multiplier",
-                "comment": "",
-                "type": "f32",
-                "default": 1.0,
-                "offset": 56
-            },
-            {
-                "name": "Forward Speed Multiplier",
+                "name": "Speed Multiplier",
                 "comment": "",
                 "type": "f32",
                 "default": 1.0,
                 "offset": 60
             },
             {
-                "name": "Underwater Health Multiplier",
+                "name": "Gravity Multiplier",
                 "comment": "",
                 "type": "f32",
                 "default": 1.0,
-                "offset": 92
+                "offset": 64
+            },
+            {
+                "name": "NPC Bounce 1 Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 68
+            },
+            {
+                "name": "NPC Bounce 2 Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 72
+            },
+            {
+                "name": "NPC Bounce 3 Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 76
+            },
+            {
+                "name": "Max Fall No Damage Multi",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 80
+            },
+            {
+                "name": "Start Health",
+                "comment": "",
+                "type": "u16",
+                "default": 8,
+                "offset": 84
+            },
+            {
+                "name": "Max Health",
+                "comment": "",
+                "type": "u16",
+                "default": 8,
+                "offset": 86
+            },
+            {
+                "name": "OOB Timer Step",
+                "comment": "",
+                "type": "u16",
+                "default": 4,
+                "offset": 88
+            },
+            {
+                "name": "OOB Max Timer",
+                "comment": "",
+                "type": "u16",
+                "default": 480,
+                "offset": 90
+            }
+        ]
+    },
+    {
+        "Yoshi": [
+            {
+                "name": "Max Juice",
+                "comment": "",
+                "type": "s32",
+                "default": 21300,
+                "offset": 96
+            },
+            {
+                "name": "Yoshi Color A",
+                "comment": "Used by Green Yoshi",
+                "type": "u8",
+                "default": [64, 161, 36, 255],
+                "offset": 100
+            },
+            {
+                "name": "Yoshi Color B",
+                "comment": "Used by Orange Yoshi",
+                "type": "u8",
+                "default": [255, 140, 28, 255],
+                "offset": 104
+            },
+            {
+                "name": "Yoshi Color C",
+                "comment": "Used by Purple Yoshi",
+                "type": "u8",
+                "default": [170, 76, 255, 255],
+                "offset": 108
+            },
+            {
+                "name": "Yoshi Color D",
+                "comment": "Used by Pink Yoshi",
+                "type": "u8",
+                "default": [255, 160, 190, 255],
+                "offset": 112
+            },
+            {
+                "name": "Max V-Speed Begin Flutter",
+                "comment": "Flutters begin when vertical speed is less than this",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 116
+            },
+            {
+                "name": "Flutter Acceleration Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 120
+            },
+            {
+                "name": "Max Flutter Time",
+                "comment": "",
+                "type": "u16",
+                "default": 120,
+                "offset": 124
+            },
+            {
+                "name": "Enable Green Yoshi",
+                "comment": "The green yoshi mod",
+                "type": "bool",
+                "default": false,
+                "offset": 126
+            },
+            {
+                "name": "Enable Free Egg",
+                "comment": "Eggs can open without a fruit",
+                "type": "bool",
+                "default": false,
+                "offset": 127
             }
         ]
     },
     {
         "Music": [
             {
-                "name": "Enable Spray Nozzle",
+                "name": "Volume",
+                "comment": "Between 0 and 1 inclusive",
+                "type": "f32",
+                "default": 0.75,
+                "offset": 128
+            },
+            {
+                "name": "Speed",
+                "comment": "Smaller value = faster playback",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 132
+            },
+            {
+                "name": "Pitch",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 136
+            },
+            {
+                "name": "Play Music",
                 "comment": "",
                 "type": "bool",
                 "default": true,
-                "offset": 64
+                "offset": 140
             },
             {
-                "name": "Enable Rocket Nozzle",
+                "name": "Music ID",
                 "comment": "",
-                "type": "bool",
-                "default": true,
-                "offset": 65
+                "type": "u16",
+                "default": 0,
+                "offset": 141
             },
             {
-                "name": "Enable Water Nozzle",
-                "comment": "",
-                "type": "bool",
-                "default": true,
-                "offset": 66
-            },
-            {
-                "name": "Enable Hover Nozzle",
-                "comment": "",
-                "type": "bool",
-                "default": true,
-                "offset": 67
-            },
-            {
-                "name": "Enable Turbo Nozzle",
-                "comment": "",
-                "type": "bool",
-                "default": true,
-                "offset": 68
-            },
-            {
-                "name": "Fludd Water Color",
-                "comment": "",
+                "name": "Area ID",
+                "comment": "Used for sound bank search",
                 "type": "u8",
-                "default": [ 60, 70, 120, 20 ],
-                "offset": 72
+                "default": 0,
+                "offset": 143
             },
             {
-                "name": "Fludd Cleaning Type",
-                "comment": "0 = None, 1 = Clean, 2 = Goop",
-                "type": "u32",
-                "default": 1,
-                "offset": 76
-            },
-            {
-                "name": "Spray Nozzle Joint Index",
-                "comment": "The index of the joint, 14 is the chest joint",
+                "name": "Episode ID",
+                "comment": "Used for sound bank search",
                 "type": "u8",
-                "default": 14,
-                "offset": 80
-            },
-            {
-                "name": "Rocket Nozzle Joint Index",
-                "comment": "The index of the joint, 14 is the chest joint",
-                "type": "u8",
-                "default": 14,
-                "offset": 81
-            },
-            {
-                "name": "Water Nozzle Joint Index",
-                "comment": "The index of the joint, 14 is the chest joint",
-                "type": "u8",
-                "default": 14,
-                "offset": 82
-            },
-            {
-                "name": "Hover Nozzle Joint Index",
-                "comment": "The index of the joint, 14 is the chest joint",
-                "type": "u8",
-                "default": 14,
-                "offset": 83
-            },
-            {
-                "name": "Turbo Nozzle Joint Index",
-                "comment": "The index of the joint, 14 is the chest joint",
-                "type": "u8",
-                "default": 14,
-                "offset": 84
-            },
-            {
-                "name": "Can Fludd Clean Seals",
-                "comment": "Yoshi seals",
-                "type": "bool",
-                "default": false,
-                "offset": 88
+                "default": 0,
+                "offset": 144
             }
         ]
     },
     {
         "Fludd": [
             {
-                "name": "Name Key",
+                "name": "Primary Nozzle",
                 "comment": "",
-                "type": "string",
-                "default": "Insert name in these quotes!",
-                "offset": 160
+                "type": "u8",
+                "default": 0,
+                "offset": 145
+            },
+            {
+                "name": "Secondary Nozzle",
+                "comment": "",
+                "type": "u8",
+                "default": 4,
+                "offset": 146
+            },
+            {
+                "name": "Water Color",
+                "comment": "",
+                "type": "u8",
+                "default": [60, 70, 120, 20],
+                "offset": 147
+            },
+            {
+                "name": "Colorize Water",
+                "comment": "Change color to be the \"Water Color\" attribute",
+                "type": "bool",
+                "default": false,
+                "offset": 151
             }
         ]
     }

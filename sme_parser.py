@@ -47,7 +47,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     matchingfiles = glob.glob(args.file)
-    paramParser = SmeFileParser(resource_path("params.json"), useFolders=(len(matchingfiles) > 1))
+    paramParser = SmeFileParser(resource_path("sme.json"), useFolders=(len(matchingfiles) > 1))
 
     try:
         if len(matchingfiles) > 0:
