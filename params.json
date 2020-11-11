@@ -136,7 +136,7 @@
                 "offset": 52
             },
             {
-                "name": "Extra Jump F-Speed Multiplier",
+                "name": "Extra Jump FSpeed Multiplier",
                 "comment": "",
                 "type": "f32",
                 "default": 1.0,
