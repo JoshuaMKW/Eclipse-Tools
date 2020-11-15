@@ -221,9 +221,17 @@ class SmeFileParser(JsonParser):
                         offset = item["offset"]
                         comment = item["comment"]
 
-                        params_file.seek(offset)
+                        itemtype = item["type"].lower().replace(" ", "").rstrip("*")
+                        isPointer = item["type"].strip().endswith("*")
 
-                        if "f" in item["type"].lower():
+                        if isPointer:
+                            params_file.seek(offset[0])
+                            offset = int.from_bytes(params_file.read(4), byteorder="big", signed=True)
+                            params_file.seek(offset)
+                        else:
+                            params_file.seek(offset)
+
+                        if "f" in itemtype:
                             if isinstance(item["default"], (tuple, list)):
                                 _valueList = []
                                 for _ in range(len(item["default"])):
@@ -233,7 +241,7 @@ class SmeFileParser(JsonParser):
                             else:
                                 value = struct.unpack('>f', params_file.read(4))[0]
 
-                        elif item["type"].lower() == "bool":
+                        elif itemtype == "bool":
                             if isinstance(item["default"], (tuple, list)):
                                 _valueList = []
                                 for _ in range(len(item["default"])):
@@ -243,7 +251,7 @@ class SmeFileParser(JsonParser):
                             else:
                                 value = byte2bool(params_file.read(1))
 
-                        elif item["type"].lower() == "string":
+                        elif itemtype == "string":
                             value = ''
                             while char := params_file.read(1):
                                 if char == b'\x00':
@@ -251,7 +259,7 @@ class SmeFileParser(JsonParser):
                                 value += char.decode('utf-8')
 
                         else:
-                            size = int(item["type"][1:]) >> 3
+                            size = int(itemtype[1:]) >> 3
 
                             if isinstance(item["default"], (tuple, list)):
                                 _valueList = []
@@ -262,7 +270,7 @@ class SmeFileParser(JsonParser):
                             else:
                                 value = int.from_bytes(params_file.read(size), byteorder='big', signed='s' in item["type"])
 
-                        if item["type"].strip() == "string":
+                        if itemtype == "string":
                             value = '"' + value.strip('"') + '"'
 
                         if comment:
@@ -282,8 +290,12 @@ class SmeFileParser(JsonParser):
         with open(f, "r") as txtdump, open(dest, "wb+") as params_file:
             _size = 0
             for item in self.attrLookupTable:
-                if item["offset"] > _size:
-                    _size = item["offset"]
+                if isinstance(item["offset"], int):
+                    if item["offset"] > _size:
+                        _size = item["offset"]
+                else:
+                    if item["offset"][1] > _size:
+                        _size = item["offset"][1]
 
             params_file.write(b'\x00' * _size)
             params_file.seek(0)
@@ -303,9 +315,17 @@ class SmeFileParser(JsonParser):
                 if thisItem is None:
                     continue
 
-                params_file.seek(thisItem["offset"])
+                itemtype = thisItem["type"].lower().replace(" ", "").rstrip("*")
+                isPointer = thisItem["type"].strip().endswith("*")
 
-                if "f" in thisItem["type"].lower():
+                if isPointer:
+                    params_file.seek(thisItem["offset"][0])
+                    params_file.write(thisItem["offset"][1].to_bytes(4, byteorder="big", signed=True))
+                    params_file.seek(thisItem["offset"][1])
+                else:
+                    params_file.seek(thisItem["offset"])
+
+                if "f" in itemtype:
                     if isinstance(thisItem["default"], (tuple, list)):
                         _val = TxtParser.get_list_key(line)
                         for piece in _val:
@@ -314,7 +334,7 @@ class SmeFileParser(JsonParser):
                         _val = TxtParser.get_float_key(line)
                         params_file.write(struct.pack(">f", float(_val)))
 
-                elif thisItem["type"].lower() == "bool":
+                elif itemtype == "bool":
                     if isinstance(thisItem["default"], (tuple, list)):
                         _val = TxtParser.get_list_key(line)
                         for piece in _val:
@@ -323,7 +343,7 @@ class SmeFileParser(JsonParser):
                         _val = TxtParser.get_bool_key(line)
                         params_file.write(bool2byte(_val))
 
-                elif thisItem["type"].lower() == "string":
+                elif itemtype == "string":
                     _val = TxtParser.get_string_key(line)
                     params_file.write(_val.encode("utf-8") + b"\x00")
 

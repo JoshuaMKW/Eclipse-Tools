@@ -74,6 +74,13 @@
                 "type": "u16",
                 "default": 480,
                 "offset": 14
+            },
+            {
+                "name": "Wall Hang Max Timer",
+                "comment": "",
+                "type": "u16",
+                "default": 2400,
+                "offset": 108
             }
         ]
     },
@@ -155,6 +162,20 @@
                 "type": "f32",
                 "default": 1.0,
                 "offset": 92
+            },
+            {
+                "name": "Throw Power Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 100
+            },
+            {
+                "name": "Slide Strength Multiplier",
+                "comment": "",
+                "type": "f32",
+                "default": 1.0,
+                "offset": 104
             }
         ]
     },
@@ -214,53 +235,74 @@
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
-                "offset": 77
+                "offset": 80
             },
             {
                 "name": "Rocket Nozzle Joint Index",
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
-                "offset": 78
+                "offset": 81
             },
             {
                 "name": "Water Nozzle Joint Index",
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
-                "offset": 79
+                "offset": 82
             },
             {
                 "name": "Hover Nozzle Joint Index",
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
-                "offset": 80
+                "offset": 83
             },
             {
                 "name": "Turbo Nozzle Joint Index",
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
-                "offset": 81
+                "offset": 84
             },
             {
                 "name": "Can Fludd Clean Seals",
                 "comment": "Yoshi seals",
                 "type": "bool",
                 "default": false,
-                "offset": 82
+                "offset": 88
             }
         ]
     },
     {
         "Misc": [
             {
+                "name": "Affected by Goop",
+                "comment": "",
+                "type": "bool",
+                "default": true,
+                "offset": 110
+            },
+            {
+                "name": "Can Hold NPCs",
+                "comment": "",
+                "type": "bool",
+                "default": false,
+                "offset": 111
+            },
+            {
+                "name": "Can Climb Walls",
+                "comment": "",
+                "type": "bool",
+                "default": false,
+                "offset": 112
+            },
+            {
                 "name": "Name Key",
                 "comment": "",
-                "type": "string",
-                "default": "Insert name in these quotes!",
-                "offset": 160
+                "type": "string *",
+                "default": "\"Insert name in these quotes!\"",
+                "offset": [96, 113]
             }
         ]
     }
