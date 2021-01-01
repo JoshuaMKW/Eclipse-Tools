@@ -87,10 +87,10 @@
     {
         "Multipliers": [
             {
-                "name": "Size XYZ Multiplier",
+                "name": "Size Multiplier",
                 "comment": "",
                 "type": "f32",
-                "default": [ 1.0, 1.0, 1.0 ],
+                "default": 1.0,
                 "offset": 16
             },
             {
@@ -203,18 +203,25 @@
                 "offset": 66
             },
             {
-                "name": "Enable Hover Nozzle",
+                "name": "Enable Yoshi Nozzle",
                 "comment": "",
                 "type": "bool",
                 "default": true,
                 "offset": 67
             },
             {
-                "name": "Enable Turbo Nozzle",
+                "name": "Enable Hover Nozzle",
                 "comment": "",
                 "type": "bool",
                 "default": true,
                 "offset": 68
+            },
+            {
+                "name": "Enable Turbo Nozzle",
+                "comment": "",
+                "type": "bool",
+                "default": true,
+                "offset": 69
             },
             {
                 "name": "Fludd Water Color",
@@ -252,18 +259,25 @@
                 "offset": 82
             },
             {
-                "name": "Hover Nozzle Joint Index",
+                "name": "Yoshi Nozzle Joint Index",
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
                 "offset": 83
             },
             {
-                "name": "Turbo Nozzle Joint Index",
+                "name": "Hover Nozzle Joint Index",
                 "comment": "The index of the joint, 14 is the chest joint",
                 "type": "u8",
                 "default": 14,
                 "offset": 84
+            },
+            {
+                "name": "Turbo Nozzle Joint Index",
+                "comment": "The index of the joint, 14 is the chest joint",
+                "type": "u8",
+                "default": 14,
+                "offset": 85
             },
             {
                 "name": "Can Fludd Clean Seals",
