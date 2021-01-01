@@ -3,7 +3,7 @@ import glob
 import os
 import sys
 
-from dataparsers import SmeFileParser
+from dataparsers import MarioParamsParser
 
 def resource_path(relative_path: str = "") -> str:
     """ Get absolute path to resource, works for dev and for cx_freeze """
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     matchingfiles = glob.glob(args.file)
-    paramParser = SmeFileParser(resource_path("params.json"), useFolders=(len(matchingfiles) > 1))
+    paramParser = MarioParamsParser(resource_path("params.json"), useFolders=(len(matchingfiles) > 1))
 
     try:
         if len(matchingfiles) > 0:

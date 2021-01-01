@@ -2,13 +2,6 @@
     {
         "Globals": [
             {
-                "name": "Initialization Address",
-                "comment": "Set to 0 for auto allocation",
-                "type": "u32",
-                "default": 0,
-                "offset": 4
-            },
-            {
                 "name": "Enable Shine Shadow",
                 "comment": "",
                 "type": "bool",
@@ -42,6 +35,41 @@
                 "type": "bool",
                 "default": false,
                 "offset": 20
+            },
+            {
+                "name": "Is Extra Map",
+                "comment": "Secret course",
+                "type": "bit",
+                "default": false,
+                "offset": [23, 4]
+            },
+            {
+                "name": "Is Diving Map",
+                "comment": "Scuba Diving",
+                "type": "bit",
+                "default": false,
+                "offset": [23, 5]
+            },
+            {
+                "name": "Is Option Map",
+                "comment": "Z Locked option menu",
+                "type": "bit",
+                "default": false,
+                "offset": [23, 6]
+            },
+            {
+                "name": "Is Multiplayer Map",
+                "comment": "Enables unused multiplayer features",
+                "type": "bit",
+                "default": false,
+                "offset": [23, 7]
+            },
+            {
+                "name": "Default Player",
+                "comment": "Loads by index, 0 = Mario, -1 = Load previous",
+                "type": "s8",
+                "default": 0,
+                "offset": 22
             }
         ]
     },
@@ -50,8 +78,8 @@
             {
                 "name": "Type",
                 "comment": "0 = Off, 1 = Static, 2 = Relative to Mario",
-                "type": "bool",
-                "default": [0.0, 3600.0, -7458.0],
+                "type": "u8",
+                "default": 0,
                 "offset": 21
             },
             {
@@ -100,6 +128,34 @@
     },
     {
         "Mario": [
+            {
+                "name": "Has Fludd",
+                "comment": "",
+                "type": "bit",
+                "default": true,
+                "offset": [24, 4]
+            },
+            {
+                "name": "Has Helmet",
+                "comment": "",
+                "type": "bit",
+                "default": false,
+                "offset": [24, 5]
+            },
+            {
+                "name": "Has Sunshades",
+                "comment": "",
+                "type": "bit",
+                "default": false,
+                "offset": [24, 6]
+            },
+            {
+                "name": "Has Shine Shirt",
+                "comment": "",
+                "type": "bit",
+                "default": false,
+                "offset": [24, 7]
+            },
             {
                 "name": "Speed Multiplier",
                 "comment": "",
@@ -179,70 +235,70 @@
                 "comment": "",
                 "type": "s32",
                 "default": 21300,
-                "offset": 96
+                "offset": 92
             },
             {
                 "name": "Yoshi Color A",
                 "comment": "Used by Green Yoshi",
                 "type": "u8",
                 "default": [64, 161, 36, 255],
-                "offset": 100
+                "offset": 96
             },
             {
                 "name": "Yoshi Color B",
                 "comment": "Used by Orange Yoshi",
                 "type": "u8",
                 "default": [255, 140, 28, 255],
-                "offset": 104
+                "offset": 100
             },
             {
                 "name": "Yoshi Color C",
                 "comment": "Used by Purple Yoshi",
                 "type": "u8",
                 "default": [170, 76, 255, 255],
-                "offset": 108
+                "offset": 104
             },
             {
                 "name": "Yoshi Color D",
                 "comment": "Used by Pink Yoshi",
                 "type": "u8",
                 "default": [255, 160, 190, 255],
-                "offset": 112
+                "offset": 108
             },
             {
                 "name": "Max V-Speed Begin Flutter",
                 "comment": "Flutters begin when vertical speed is less than this",
                 "type": "f32",
                 "default": 1.0,
-                "offset": 116
+                "offset": 112
             },
             {
                 "name": "Flutter Acceleration Multiplier",
                 "comment": "",
                 "type": "f32",
                 "default": 1.0,
-                "offset": 120
+                "offset": 116
             },
             {
                 "name": "Max Flutter Time",
                 "comment": "",
                 "type": "u16",
                 "default": 120,
-                "offset": 124
+                "offset": 120
             },
             {
                 "name": "Enable Green Yoshi",
                 "comment": "The green yoshi mod",
                 "type": "bool",
                 "default": false,
-                "offset": 126
+                "offset": 122
             },
             {
                 "name": "Enable Free Egg",
                 "comment": "Eggs can open without a fruit",
                 "type": "bool",
                 "default": false,
-                "offset": 127
+                "offset": 123
             }
         ]
     },
@@ -253,49 +309,49 @@
                 "comment": "Between 0 and 1 inclusive",
                 "type": "f32",
                 "default": 0.75,
-                "offset": 128
+                "offset": 124
             },
             {
                 "name": "Speed",
                 "comment": "Smaller value = faster playback",
                 "type": "f32",
                 "default": 1.0,
-                "offset": 132
+                "offset": 128
             },
             {
                 "name": "Pitch",
                 "comment": "",
                 "type": "f32",
                 "default": 1.0,
-                "offset": 136
+                "offset": 132
             },
             {
                 "name": "Play Music",
                 "comment": "",
                 "type": "bool",
                 "default": true,
-                "offset": 140
+                "offset": 136
             },
             {
                 "name": "Music ID",
                 "comment": "",
                 "type": "u16",
                 "default": 0,
-                "offset": 141
+                "offset": 137
             },
             {
                 "name": "Area ID",
                 "comment": "Used for sound bank search",
                 "type": "u8",
                 "default": 0,
-                "offset": 143
+                "offset": 139
             },
             {
                 "name": "Episode ID",
                 "comment": "Used for sound bank search",
                 "type": "u8",
                 "default": 0,
-                "offset": 144
+                "offset": 140
             }
         ]
     },
@@ -306,28 +362,28 @@
                 "comment": "",
                 "type": "u8",
                 "default": 0,
-                "offset": 145
+                "offset": 144
             },
             {
                 "name": "Secondary Nozzle",
                 "comment": "",
                 "type": "u8",
                 "default": 4,
-                "offset": 146
+                "offset": 145
             },
             {
                 "name": "Water Color",
                 "comment": "",
                 "type": "u8",
                 "default": [60, 70, 120, 20],
-                "offset": 147
+                "offset": 146
             },
             {
                 "name": "Colorize Water",
                 "comment": "Change color to be the \"Water Color\" attribute",
                 "type": "bool",
                 "default": false,
-                "offset": 151
+                "offset": 150
             }
         ]
     }
