@@ -81,6 +81,13 @@
                 "type": "u16",
                 "default": 2400,
                 "offset": 108
+            },
+            {
+                "name": "Climbing Max Timer",
+                "comment": "Forced climbing (-1 = infinite)",
+                "type": "s16",
+                "default": 1200,
+                "offset": 113
             }
         ]
     },
@@ -316,7 +323,7 @@
                 "comment": "",
                 "type": "string *",
                 "default": "\"Insert name in these quotes!\"",
-                "offset": [96, 113]
+                "offset": [96, 115]
             }
         ]
     }
